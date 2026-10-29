@@ -185,6 +185,3 @@ System predictions are compared against these using:
 - **Pearson Correlation**
 - **Bland-Altman Agreement**
 
-## License
-
-Proprietary — QYX MedTech © 2024

@@ -114,7 +114,3 @@ cd training && pytest       # kinematics and classification rules
   has JWT helpers to build on)
 - Hosting online (the analysis needs this machine's GPU and model files)
 - Morphology (normal forms) — not measured by this pipeline
-
-## License
-
-Proprietary — QYX MedTech © 2024
