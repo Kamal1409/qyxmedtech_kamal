@@ -1,0 +1,113 @@
+# ===========================================================================
+# QYX MedTech — .gitignore
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+.venv/
+.venv*/
+venv/
+env/
+.env/
+__pycache__/
+*.py[cod]
+.Python
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---------------------------------------------------------------------------
+# Model weights — only the deployed detector is committed
+# ---------------------------------------------------------------------------
+*.pt
+*.pth
+*.onnx
+!training/weights/sperm_detector.pt
+
+# YOLO / Ultralytics run folders (training curves, checkpoints)
+runs/
+training/runs/
+outputs/
+training/outputs/
+
+# ---------------------------------------------------------------------------
+# Training data — large, generated, or raw patient material (DO NOT commit)
+# ---------------------------------------------------------------------------
+# raw analyzer videos, extracted frames (stage 1), generated YOLO datasets
+training/data/vid/
+training/data/frames/
+training/data/yolo_dataset/
+training/data/yolo_cv/
+training/data/yolo_full/
+training/data/yolo_holdout/
+training/data/annotations/
+
+# Annotation review sets: keep the hand-corrected test set, selection list and
+# README; drop the raw frames, pre-labels and export zips
+training/data/annotation_review*/images/
+training/data/annotation_review*/prelabels/
+training/data/annotation_review*/*.zip
+
+training/scratch/
+
+# Committed on purpose (small, source of truth):
+#   training/data/report/                       lab analyzer reports (cropped, no patient identifiers)
+#   training/data/ground_truth*.json            transcribed lab values
+#   training/data/video_split.json              dev/test split
+#   training/data/annotation_review/corrected/  hand-corrected detector test set
+
+# ---------------------------------------------------------------------------
+# Backend
+# ---------------------------------------------------------------------------
+backend/.env
+backend/outputs/
+# uploaded patient videos and per-analysis results -- never commit
+backend/data/
+
+# ---------------------------------------------------------------------------
+# Frontend
+# ---------------------------------------------------------------------------
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+frontend/.env.production
+*.tsbuildinfo
+
+# ---------------------------------------------------------------------------
+# Local tooling / caches / scratch notes
+# ---------------------------------------------------------------------------
+.cache/
+graphify-out/
+.claude/settings.local.json
+.github/prompts/
+implementation_plan.md
+graphify_analysis.md
+
+# ---------------------------------------------------------------------------
+# IDE / OS
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.iml
+.DS_Store
+.AppleDouble
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ---------------------------------------------------------------------------
+# Misc
+# ---------------------------------------------------------------------------
+*.log
+*.err
+*.tmp
+*.bak

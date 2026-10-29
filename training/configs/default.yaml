@@ -1,0 +1,104 @@
+# ===========================================================================
+# QYX MedTech - CASA Configuration
+# Segmentation pipeline: Cellpose heads + Frangi/U-Net tails + trackpy + WHO
+# ===========================================================================
+
+# -- Paths -----------------------------------------------------------------
+paths:
+  video_dir:           "data/vid"
+  report_dir:          "data/report"
+  frames_dir:          "data/frames"
+  output_dir:          "outputs/seg"
+  ground_truth_file:   "data/ground_truth.json"
+
+# -- Frame Extraction (Stage 1) -------------------------------------------
+video:
+  frame_interval:    1
+  target_resolution: null
+  output_format:     "jpg"
+  jpeg_quality:      95
+
+
+frame_qc:
+  enabled:              true
+  dark_fraction:        0.5
+  min_segment_frames:   15
+  motion_threshold:     15
+  frozen_max_motion:    2.0e-4
+  frozen_max_diff:      0.3
+
+# -- Tracking (trackpy distance-based linking) ----------------------------
+tracker:
+  search_radius_px: 20   # a fast sperm moves <= ~8 px/frame here; 30 let crowded fields link neighbours (false motility)
+  adaptive_stop:    6.0
+  memory_frames:    5
+
+# -- Kinematics ------------------------------------------------------------
+kinematics:
+
+  pixel_to_micron:        0.5
+  smoothing_window:       15
+  min_track_frames:       10
+  capture_fps:            19     # LensHooke exports play at 30 fps; real capture rate fitted on dev videos (also halves BCF error). Replace with the spec value if Bonraybio provides it.
+
+# -- Concentration Calculation ---------------------------------------------
+concentration:
+  enabled:                true
+  chamber_depth_um:       10
+
+  field_of_view_width_um:  434.0
+  field_of_view_height_um: 299.0
+  calibration_factor:      1.583  # empirical: cassette's effective counting volume is unpublished; median lab/pred ratio on dev videos
+
+
+classification:
+  progressive:
+    rapid_min_vap: 25.0
+    min_str: 20.0
+    min_lin: 0.0
+  non_progressive:
+    min_vap: 3.0
+    min_vcl: 6.0                 # head below min_vap but jiggling at VCL >= this = NP (beating in place), not IM
+  not_sperm:
+    max_head_aspect: 1.2         # static + round blob = round cell / debris: dropped from all counts
+
+# -- Validation ------------------------------------------------------------
+validation:
+  metrics:
+    - "mae"
+    - "percentage_diff"
+    - "pearson_correlation"
+    - "bland_altman"
+    - "icc"              # Intraclass Correlation Coefficient (method-comparison standard)
+
+# -- Segmentation pipeline -------------------------------------------------
+segmentation:
+  head_masks_dir:  "outputs/seg/head"
+  tail_masks_dir:  "outputs/seg/tail"
+  sample_interval: 1   # process every Nth frame (1 = all)
+
+  # Head — YOLOv8 detector (train first: python train_yolo.py)
+  head:
+    weights:             "weights/sperm_detector.pt"   # relative to training/
+    conf_threshold:      0.35
+    iou_threshold:       0.45
+    imgsz:               640
+    max_box_px:          60
+
+  # Tail — Frangi ridge bootstrap -> U-Net
+  tail:
+    device:           "cuda"     # "cuda" (GPU acceleration) or "cpu"
+    ridge_filter:     "frangi"   # frangi / sato / meijering
+    ridge_sigmas:     [1, 2, 3]  # scales for thin-structure detection (px)
+    ridge_threshold:  0.15       # binarise ridge response
+    max_link_dist_px: 40         # max distance from tail strand to head centroid
+    unet_encoder:     "resnet34"
+    unet_epochs:      60
+    unet_batch_size:  4          # 8 OOMs on the 4 GB RTX 2050 (Windows leaves ~2.3 GB usable)
+    unet_lr:          0.0003
+
+  # Flagellar beat analysis (skeleton -> FFT)
+  beat:
+    arc_sample_points: 20    # equidistant points along flagellar centreline
+    ref_arc_fraction:  0.5   # arc fraction used for ALH/BCF measurement
+    min_track_frames:  15    # min frames needed for a valid beat estimate

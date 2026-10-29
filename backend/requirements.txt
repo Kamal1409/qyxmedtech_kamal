@@ -1,0 +1,12 @@
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+pydantic-settings>=2.2.0
+python-multipart>=0.0.9
+PyYAML>=6.0
+PyJWT>=2.8.0              # app/core/security.py (login, not enabled yet)
+passlib[bcrypt]>=1.7.4
+httpx>=0.27.0
+pytest>=8.2.0
+# The analysis itself runs the training pipeline (training/src), so its
+# dependencies are needed too:  pip install -r ../training/requirements.txt

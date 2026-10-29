@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "rule": "Video-level split (no frames of a test video are used for tuning). Videos 1-8 go to dev because every pipeline threshold so far (STR gate, VAP cut-offs, frame QC, tracker) was tuned on them and the detector was trained on their frames. Videos 9-23 (unseen by the detector) are sorted by lab total motility and alternately assigned test/dev, so both sets span 0-96% motility and 15-266 M/mL.",
+    "usage": "Tune on dev only. Report test once per change; never pick settings by looking at test.",
+    "excluded": "Videos 18 and 23 are excluded from every evaluation (too blurry / unusable field). Their annotation files are kept on disk; they are just not scored."
+  },
+  "dev": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "10",
+    "12",
+    "16",
+    "17",
+    "19",
+    "20"
+  ],
+  "test": [
+    "9",
+    "11",
+    "13",
+    "14",
+    "15",
+    "21",
+    "22"
+  ],
+  "excluded": [
+    "18",
+    "23"
+  ]
+}

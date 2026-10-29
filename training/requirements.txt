@@ -1,0 +1,34 @@
+# QYX MedTech — CASA Pipeline Dependencies
+# Python 3.13 · venv: D:\QYX_MedTech\.venv313
+# GPU: RTX 2050 (4 GB) · CUDA 12.8
+
+# --- Core ML / GPU --------------------------------------------------------
+# torch is pre-installed in the venv (torch==2.11.0+cu128).
+# Install it separately before this file:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+
+# --- Detection + segmentation stack --------------------------------------
+ultralytics>=8.3.0,<9.0.0             # YOLOv8 head detection
+
+# Tail segmentation + head tracking
+scikit-image>=0.24.0,<0.26.0          # Frangi ridge filter, skeletonize
+trackpy>=0.6.4,<0.7.0                 # microscopy particle tracking
+segmentation-models-pytorch>=0.3.3    # U-Net for tail segmentation
+
+# --- Image / video processing ---------------------------------------------
+numpy>=1.26.0,<2.3.0
+opencv-python>=4.9.0,<4.12.0
+Pillow>=10.0.0,<13.0.0
+
+# --- Data / science -------------------------------------------------------
+pandas>=2.2.0,<3.0.0
+scipy>=1.13.0,<1.15.0
+
+# --- Visualization --------------------------------------------------------
+plotly>=5.22.0,<7.0.0
+
+# --- OCR (lab report ground truth extraction) -----------------------------
+pytesseract>=0.3.10,<1.0.0
+
+# --- Config ---------------------------------------------------------------
+pyyaml>=6.0.1,<7.0.0
