@@ -114,3 +114,7 @@ cd training && pytest       # kinematics and classification rules
   has JWT helpers to build on)
 - Hosting online (the analysis needs this machine's GPU and model files)
 - Morphology (normal forms) — not measured by this pipeline
+- Self-learning detector — the detector would keep improving from the videos analysed
+  in the app: uncertain frames are queued for review, the corrections are fed back into
+  training, and a new model goes live only if it beats the current one on the
+  hand-corrected test set (see [training/README.md](training/README.md#future-work-self-learning-detector))

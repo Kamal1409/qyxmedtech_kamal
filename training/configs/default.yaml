@@ -1,6 +1,6 @@
 # ===========================================================================
 # QYX MedTech - CASA Configuration
-# Segmentation pipeline: Cellpose heads + Frangi/U-Net tails + trackpy + WHO
+# Segmentation pipeline: YOLO heads + Frangi/U-Net tails + trackpy + WHO
 # ===========================================================================
 
 # -- Paths -----------------------------------------------------------------
