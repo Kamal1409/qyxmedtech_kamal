@@ -1,0 +1,2290 @@
+{
+  "concentration": {
+    "n_videos": 21,
+    "mae": 7.489,
+    "mean_pct_diff": 12.32,
+    "pearson_r": 0.9913,
+    "pearson_p": 0.0,
+    "icc": {
+      "icc": 0.9911,
+      "lower_ci": 0.9782,
+      "upper_ci": 0.9964,
+      "f_stat": 223.1895,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.0
+    },
+    "bland_altman": {
+      "mean_diff": -2.321,
+      "sd_diff": 10.423,
+      "upper_loa": 18.109,
+      "lower_loa": -22.751
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 40.48,
+        "actual": 38.6,
+        "diff": 1.88
+      },
+      {
+        "video": "10",
+        "predicted": 80.63,
+        "actual": 79.1,
+        "diff": 1.53
+      },
+      {
+        "video": "11",
+        "predicted": 216.3,
+        "actual": 211.3,
+        "diff": 5.0
+      },
+      {
+        "video": "12",
+        "predicted": 86.13,
+        "actual": 91.1,
+        "diff": -4.97
+      },
+      {
+        "video": "13",
+        "predicted": 41.8,
+        "actual": 47.5,
+        "diff": -5.7
+      },
+      {
+        "video": "14",
+        "predicted": 55.46,
+        "actual": 63.5,
+        "diff": -8.04
+      },
+      {
+        "video": "15",
+        "predicted": 58.16,
+        "actual": 55.8,
+        "diff": 2.36
+      },
+      {
+        "video": "16",
+        "predicted": 85.97,
+        "actual": 69.3,
+        "diff": 16.67
+      },
+      {
+        "video": "17",
+        "predicted": 114.86,
+        "actual": 128.6,
+        "diff": -13.74
+      },
+      {
+        "video": "19",
+        "predicted": 138.19,
+        "actual": 165.5,
+        "diff": -27.31
+      },
+      {
+        "video": "2",
+        "predicted": 109.93,
+        "actual": 109.8,
+        "diff": 0.13
+      },
+      {
+        "video": "20",
+        "predicted": 265.86,
+        "actual": 266.0,
+        "diff": -0.14
+      },
+      {
+        "video": "21",
+        "predicted": 161.18,
+        "actual": 172.5,
+        "diff": -11.32
+      },
+      {
+        "video": "22",
+        "predicted": 22.39,
+        "actual": 18.0,
+        "diff": 4.39
+      },
+      {
+        "video": "3",
+        "predicted": 22.08,
+        "actual": 22.8,
+        "diff": -0.72
+      },
+      {
+        "video": "4",
+        "predicted": 38.58,
+        "actual": 36.0,
+        "diff": 2.58
+      },
+      {
+        "video": "5",
+        "predicted": 65.99,
+        "actual": 66.5,
+        "diff": -0.51
+      },
+      {
+        "video": "6",
+        "predicted": 18.51,
+        "actual": 9.3,
+        "diff": 9.21
+      },
+      {
+        "video": "7",
+        "predicted": 285.11,
+        "actual": 274.6,
+        "diff": 10.51
+      },
+      {
+        "video": "8",
+        "predicted": 144.74,
+        "actual": 153.0,
+        "diff": -8.26
+      },
+      {
+        "video": "9",
+        "predicted": 142.31,
+        "actual": 164.6,
+        "diff": -22.29
+      }
+    ]
+  },
+  "total_motility": {
+    "n_videos": 21,
+    "mae": 7.59,
+    "mean_pct_diff": 15.14,
+    "pearson_r": 0.9142,
+    "pearson_p": 0.0,
+    "icc": {
+      "icc": 0.9113,
+      "lower_ci": 0.7883,
+      "upper_ci": 0.9618,
+      "f_stat": 20.8183,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.0
+    },
+    "bland_altman": {
+      "mean_diff": -1.124,
+      "sd_diff": 10.07,
+      "upper_loa": 18.613,
+      "lower_loa": -20.86
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 52.8,
+        "actual": 80.0,
+        "diff": -27.2
+      },
+      {
+        "video": "10",
+        "predicted": 59.8,
+        "actual": 57.0,
+        "diff": 2.8
+      },
+      {
+        "video": "11",
+        "predicted": 96.8,
+        "actual": 96.0,
+        "diff": 0.8
+      },
+      {
+        "video": "12",
+        "predicted": 27.1,
+        "actual": 29.0,
+        "diff": -1.9
+      },
+      {
+        "video": "13",
+        "predicted": 23.8,
+        "actual": 27.0,
+        "diff": -3.2
+      },
+      {
+        "video": "14",
+        "predicted": 54.8,
+        "actual": 50.0,
+        "diff": 4.8
+      },
+      {
+        "video": "15",
+        "predicted": 39.3,
+        "actual": 30.0,
+        "diff": 9.3
+      },
+      {
+        "video": "16",
+        "predicted": 65.5,
+        "actual": 60.0,
+        "diff": 5.5
+      },
+      {
+        "video": "17",
+        "predicted": 46.0,
+        "actual": 35.0,
+        "diff": 11.0
+      },
+      {
+        "video": "19",
+        "predicted": 47.3,
+        "actual": 32.0,
+        "diff": 15.3
+      },
+      {
+        "video": "2",
+        "predicted": 86.1,
+        "actual": 90.0,
+        "diff": -3.9
+      },
+      {
+        "video": "20",
+        "predicted": 95.2,
+        "actual": 94.0,
+        "diff": 1.2
+      },
+      {
+        "video": "21",
+        "predicted": 72.4,
+        "actual": 64.0,
+        "diff": 8.4
+      },
+      {
+        "video": "22",
+        "predicted": 52.2,
+        "actual": 57.0,
+        "diff": -4.8
+      },
+      {
+        "video": "3",
+        "predicted": 31.6,
+        "actual": 49.0,
+        "diff": -17.4
+      },
+      {
+        "video": "4",
+        "predicted": 30.6,
+        "actual": 31.0,
+        "diff": -0.4
+      },
+      {
+        "video": "5",
+        "predicted": 58.8,
+        "actual": 63.0,
+        "diff": -4.2
+      },
+      {
+        "video": "6",
+        "predicted": 61.1,
+        "actual": 69.0,
+        "diff": -7.9
+      },
+      {
+        "video": "7",
+        "predicted": 87.4,
+        "actual": 95.0,
+        "diff": -7.6
+      },
+      {
+        "video": "8",
+        "predicted": 80.0,
+        "actual": 93.0,
+        "diff": -13.0
+      },
+      {
+        "video": "9",
+        "predicted": 41.8,
+        "actual": 33.0,
+        "diff": 8.8
+      }
+    ]
+  },
+  "progressive": {
+    "n_videos": 21,
+    "mae": 5.21,
+    "mean_pct_diff": 10.71,
+    "pearson_r": 0.9752,
+    "pearson_p": 0.0,
+    "icc": {
+      "icc": 0.9623,
+      "lower_ci": 0.9088,
+      "upper_ci": 0.9844,
+      "f_stat": 51.6099,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.0
+    },
+    "bland_altman": {
+      "mean_diff": -1.314,
+      "sd_diff": 6.72,
+      "upper_loa": 11.857,
+      "lower_loa": -14.486
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 52.8,
+        "actual": 57.0,
+        "diff": -4.2
+      },
+      {
+        "video": "10",
+        "predicted": 53.8,
+        "actual": 52.0,
+        "diff": 1.8
+      },
+      {
+        "video": "11",
+        "predicted": 93.4,
+        "actual": 95.0,
+        "diff": -1.6
+      },
+      {
+        "video": "12",
+        "predicted": 20.0,
+        "actual": 19.0,
+        "diff": 1.0
+      },
+      {
+        "video": "13",
+        "predicted": 19.0,
+        "actual": 19.0,
+        "diff": 0.0
+      },
+      {
+        "video": "14",
+        "predicted": 52.1,
+        "actual": 49.0,
+        "diff": 3.1
+      },
+      {
+        "video": "15",
+        "predicted": 27.9,
+        "actual": 21.0,
+        "diff": 6.9
+      },
+      {
+        "video": "16",
+        "predicted": 57.1,
+        "actual": 55.0,
+        "diff": 2.1
+      },
+      {
+        "video": "17",
+        "predicted": 39.4,
+        "actual": 34.0,
+        "diff": 5.4
+      },
+      {
+        "video": "19",
+        "predicted": 36.7,
+        "actual": 32.0,
+        "diff": 4.7
+      },
+      {
+        "video": "2",
+        "predicted": 80.0,
+        "actual": 88.0,
+        "diff": -8.0
+      },
+      {
+        "video": "20",
+        "predicted": 89.3,
+        "actual": 91.0,
+        "diff": -1.7
+      },
+      {
+        "video": "21",
+        "predicted": 61.2,
+        "actual": 63.0,
+        "diff": -1.8
+      },
+      {
+        "video": "22",
+        "predicted": 52.2,
+        "actual": 42.0,
+        "diff": 10.2
+      },
+      {
+        "video": "3",
+        "predicted": 31.6,
+        "actual": 37.0,
+        "diff": -5.4
+      },
+      {
+        "video": "4",
+        "predicted": 25.0,
+        "actual": 22.0,
+        "diff": 3.0
+      },
+      {
+        "video": "5",
+        "predicted": 54.4,
+        "actual": 61.0,
+        "diff": -6.6
+      },
+      {
+        "video": "6",
+        "predicted": 50.0,
+        "actual": 59.0,
+        "diff": -9.0
+      },
+      {
+        "video": "7",
+        "predicted": 79.9,
+        "actual": 94.0,
+        "diff": -14.1
+      },
+      {
+        "video": "8",
+        "predicted": 75.9,
+        "actual": 92.0,
+        "diff": -16.1
+      },
+      {
+        "video": "9",
+        "predicted": 33.7,
+        "actual": 31.0,
+        "diff": 2.7
+      }
+    ]
+  },
+  "rapid_progressive": {
+    "n_videos": 21,
+    "mae": 3.514,
+    "mean_pct_diff": 21.82,
+    "pearson_r": 0.9492,
+    "pearson_p": 0.0,
+    "icc": {
+      "icc": 0.9482,
+      "lower_ci": 0.8737,
+      "upper_ci": 0.978,
+      "f_stat": 36.5565,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.0
+    },
+    "bland_altman": {
+      "mean_diff": -0.667,
+      "sd_diff": 4.798,
+      "upper_loa": 8.738,
+      "lower_loa": -10.071
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 38.9,
+        "actual": 29.0,
+        "diff": 9.9
+      },
+      {
+        "video": "10",
+        "predicted": 0.0,
+        "actual": 0.0,
+        "diff": 0.0
+      },
+      {
+        "video": "11",
+        "predicted": 31.6,
+        "actual": 37.0,
+        "diff": -5.4
+      },
+      {
+        "video": "12",
+        "predicted": 1.2,
+        "actual": 1.0,
+        "diff": 0.2
+      },
+      {
+        "video": "13",
+        "predicted": 0.0,
+        "actual": 4.0,
+        "diff": -4.0
+      },
+      {
+        "video": "14",
+        "predicted": 6.8,
+        "actual": 6.0,
+        "diff": 0.8
+      },
+      {
+        "video": "15",
+        "predicted": 3.3,
+        "actual": 8.0,
+        "diff": -4.7
+      },
+      {
+        "video": "16",
+        "predicted": 13.1,
+        "actual": 14.0,
+        "diff": -0.9
+      },
+      {
+        "video": "17",
+        "predicted": 12.4,
+        "actual": 13.0,
+        "diff": -0.6
+      },
+      {
+        "video": "19",
+        "predicted": 12.7,
+        "actual": 13.0,
+        "diff": -0.3
+      },
+      {
+        "video": "2",
+        "predicted": 45.5,
+        "actual": 53.0,
+        "diff": -7.5
+      },
+      {
+        "video": "20",
+        "predicted": 14.0,
+        "actual": 14.0,
+        "diff": 0.0
+      },
+      {
+        "video": "21",
+        "predicted": 18.2,
+        "actual": 20.0,
+        "diff": -1.8
+      },
+      {
+        "video": "22",
+        "predicted": 26.1,
+        "actual": 18.0,
+        "diff": 8.1
+      },
+      {
+        "video": "3",
+        "predicted": 15.8,
+        "actual": 20.0,
+        "diff": -4.2
+      },
+      {
+        "video": "4",
+        "predicted": 19.4,
+        "actual": 12.0,
+        "diff": 7.4
+      },
+      {
+        "video": "5",
+        "predicted": 26.5,
+        "actual": 23.0,
+        "diff": 3.5
+      },
+      {
+        "video": "6",
+        "predicted": 22.2,
+        "actual": 26.0,
+        "diff": -3.8
+      },
+      {
+        "video": "7",
+        "predicted": 26.9,
+        "actual": 29.0,
+        "diff": -2.1
+      },
+      {
+        "video": "8",
+        "predicted": 44.4,
+        "actual": 53.0,
+        "diff": -8.6
+      },
+      {
+        "video": "9",
+        "predicted": 0.0,
+        "actual": 0.0,
+        "diff": 0.0
+      }
+    ]
+  },
+  "slow_progressive": {
+    "n_videos": 21,
+    "mae": 4.743,
+    "mean_pct_diff": 19.05,
+    "pearson_r": 0.9361,
+    "pearson_p": 0.0,
+    "icc": {
+      "icc": 0.9376,
+      "lower_ci": 0.8479,
+      "upper_ci": 0.9733,
+      "f_stat": 29.9337,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.0
+    },
+    "bland_altman": {
+      "mean_diff": -0.648,
+      "sd_diff": 6.318,
+      "upper_loa": 11.736,
+      "lower_loa": -13.031
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 13.9,
+        "actual": 28.0,
+        "diff": -14.1
+      },
+      {
+        "video": "10",
+        "predicted": 53.8,
+        "actual": 52.0,
+        "diff": 1.8
+      },
+      {
+        "video": "11",
+        "predicted": 61.8,
+        "actual": 58.0,
+        "diff": 3.8
+      },
+      {
+        "video": "12",
+        "predicted": 18.8,
+        "actual": 18.0,
+        "diff": 0.8
+      },
+      {
+        "video": "13",
+        "predicted": 19.0,
+        "actual": 15.0,
+        "diff": 4.0
+      },
+      {
+        "video": "14",
+        "predicted": 45.2,
+        "actual": 43.0,
+        "diff": 2.2
+      },
+      {
+        "video": "15",
+        "predicted": 24.6,
+        "actual": 13.0,
+        "diff": 11.6
+      },
+      {
+        "video": "16",
+        "predicted": 44.0,
+        "actual": 41.0,
+        "diff": 3.0
+      },
+      {
+        "video": "17",
+        "predicted": 27.0,
+        "actual": 21.0,
+        "diff": 6.0
+      },
+      {
+        "video": "19",
+        "predicted": 24.0,
+        "actual": 19.0,
+        "diff": 5.0
+      },
+      {
+        "video": "2",
+        "predicted": 34.5,
+        "actual": 35.0,
+        "diff": -0.5
+      },
+      {
+        "video": "20",
+        "predicted": 75.4,
+        "actual": 77.0,
+        "diff": -1.6
+      },
+      {
+        "video": "21",
+        "predicted": 43.0,
+        "actual": 43.0,
+        "diff": 0.0
+      },
+      {
+        "video": "22",
+        "predicted": 26.1,
+        "actual": 24.0,
+        "diff": 2.1
+      },
+      {
+        "video": "3",
+        "predicted": 15.8,
+        "actual": 17.0,
+        "diff": -1.2
+      },
+      {
+        "video": "4",
+        "predicted": 5.6,
+        "actual": 10.0,
+        "diff": -4.4
+      },
+      {
+        "video": "5",
+        "predicted": 27.9,
+        "actual": 38.0,
+        "diff": -10.1
+      },
+      {
+        "video": "6",
+        "predicted": 27.8,
+        "actual": 33.0,
+        "diff": -5.2
+      },
+      {
+        "video": "7",
+        "predicted": 53.0,
+        "actual": 65.0,
+        "diff": -12.0
+      },
+      {
+        "video": "8",
+        "predicted": 31.5,
+        "actual": 39.0,
+        "diff": -7.5
+      },
+      {
+        "video": "9",
+        "predicted": 33.7,
+        "actual": 31.0,
+        "diff": 2.7
+      }
+    ]
+  },
+  "non_progressive": {
+    "n_videos": 21,
+    "mae": 5.867,
+    "mean_pct_diff": Infinity,
+    "pearson_r": -0.4386,
+    "pearson_p": 0.046703,
+    "icc": {
+      "icc": -0.4138,
+      "lower_ci": -0.6957,
+      "upper_ci": 0.043,
+      "f_stat": 0.4422,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.962317
+    },
+    "bland_altman": {
+      "mean_diff": 0.2,
+      "sd_diff": 8.144,
+      "upper_loa": 16.163,
+      "lower_loa": -15.763
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 0.0,
+        "actual": 23.0,
+        "diff": -23.0
+      },
+      {
+        "video": "10",
+        "predicted": 6.0,
+        "actual": 5.0,
+        "diff": 1.0
+      },
+      {
+        "video": "11",
+        "predicted": 3.4,
+        "actual": 1.0,
+        "diff": 2.4
+      },
+      {
+        "video": "12",
+        "predicted": 7.1,
+        "actual": 10.0,
+        "diff": -2.9
+      },
+      {
+        "video": "13",
+        "predicted": 4.8,
+        "actual": 8.0,
+        "diff": -3.2
+      },
+      {
+        "video": "14",
+        "predicted": 2.7,
+        "actual": 1.0,
+        "diff": 1.7
+      },
+      {
+        "video": "15",
+        "predicted": 11.5,
+        "actual": 9.0,
+        "diff": 2.5
+      },
+      {
+        "video": "16",
+        "predicted": 8.3,
+        "actual": 5.0,
+        "diff": 3.3
+      },
+      {
+        "video": "17",
+        "predicted": 6.6,
+        "actual": 1.0,
+        "diff": 5.6
+      },
+      {
+        "video": "19",
+        "predicted": 10.7,
+        "actual": 0.0,
+        "diff": 10.7
+      },
+      {
+        "video": "2",
+        "predicted": 6.1,
+        "actual": 2.0,
+        "diff": 4.1
+      },
+      {
+        "video": "20",
+        "predicted": 5.9,
+        "actual": 3.0,
+        "diff": 2.9
+      },
+      {
+        "video": "21",
+        "predicted": 11.2,
+        "actual": 1.0,
+        "diff": 10.2
+      },
+      {
+        "video": "22",
+        "predicted": 0.0,
+        "actual": 15.0,
+        "diff": -15.0
+      },
+      {
+        "video": "3",
+        "predicted": 0.0,
+        "actual": 12.0,
+        "diff": -12.0
+      },
+      {
+        "video": "4",
+        "predicted": 5.6,
+        "actual": 9.0,
+        "diff": -3.4
+      },
+      {
+        "video": "5",
+        "predicted": 4.4,
+        "actual": 2.0,
+        "diff": 2.4
+      },
+      {
+        "video": "6",
+        "predicted": 11.1,
+        "actual": 10.0,
+        "diff": 1.1
+      },
+      {
+        "video": "7",
+        "predicted": 7.5,
+        "actual": 1.0,
+        "diff": 6.5
+      },
+      {
+        "video": "8",
+        "predicted": 4.1,
+        "actual": 1.0,
+        "diff": 3.1
+      },
+      {
+        "video": "9",
+        "predicted": 8.2,
+        "actual": 2.0,
+        "diff": 6.2
+      }
+    ]
+  },
+  "immotile": {
+    "n_videos": 21,
+    "mae": 7.59,
+    "mean_pct_diff": 36.26,
+    "pearson_r": 0.9142,
+    "pearson_p": 0.0,
+    "icc": {
+      "icc": 0.9113,
+      "lower_ci": 0.7883,
+      "upper_ci": 0.9618,
+      "f_stat": 20.8183,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.0
+    },
+    "bland_altman": {
+      "mean_diff": 1.124,
+      "sd_diff": 10.07,
+      "upper_loa": 20.86,
+      "lower_loa": -18.613
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 47.2,
+        "actual": 20.0,
+        "diff": 27.2
+      },
+      {
+        "video": "10",
+        "predicted": 40.2,
+        "actual": 43.0,
+        "diff": -2.8
+      },
+      {
+        "video": "11",
+        "predicted": 3.2,
+        "actual": 4.0,
+        "diff": -0.8
+      },
+      {
+        "video": "12",
+        "predicted": 72.9,
+        "actual": 71.0,
+        "diff": 1.9
+      },
+      {
+        "video": "13",
+        "predicted": 76.2,
+        "actual": 73.0,
+        "diff": 3.2
+      },
+      {
+        "video": "14",
+        "predicted": 45.2,
+        "actual": 50.0,
+        "diff": -4.8
+      },
+      {
+        "video": "15",
+        "predicted": 60.7,
+        "actual": 70.0,
+        "diff": -9.3
+      },
+      {
+        "video": "16",
+        "predicted": 34.5,
+        "actual": 40.0,
+        "diff": -5.5
+      },
+      {
+        "video": "17",
+        "predicted": 54.0,
+        "actual": 65.0,
+        "diff": -11.0
+      },
+      {
+        "video": "19",
+        "predicted": 52.7,
+        "actual": 68.0,
+        "diff": -15.3
+      },
+      {
+        "video": "2",
+        "predicted": 13.9,
+        "actual": 10.0,
+        "diff": 3.9
+      },
+      {
+        "video": "20",
+        "predicted": 4.8,
+        "actual": 6.0,
+        "diff": -1.2
+      },
+      {
+        "video": "21",
+        "predicted": 27.6,
+        "actual": 36.0,
+        "diff": -8.4
+      },
+      {
+        "video": "22",
+        "predicted": 47.8,
+        "actual": 43.0,
+        "diff": 4.8
+      },
+      {
+        "video": "3",
+        "predicted": 68.4,
+        "actual": 51.0,
+        "diff": 17.4
+      },
+      {
+        "video": "4",
+        "predicted": 69.4,
+        "actual": 69.0,
+        "diff": 0.4
+      },
+      {
+        "video": "5",
+        "predicted": 41.2,
+        "actual": 37.0,
+        "diff": 4.2
+      },
+      {
+        "video": "6",
+        "predicted": 38.9,
+        "actual": 31.0,
+        "diff": 7.9
+      },
+      {
+        "video": "7",
+        "predicted": 12.6,
+        "actual": 5.0,
+        "diff": 7.6
+      },
+      {
+        "video": "8",
+        "predicted": 20.0,
+        "actual": 7.0,
+        "diff": 13.0
+      },
+      {
+        "video": "9",
+        "predicted": 58.2,
+        "actual": 67.0,
+        "diff": -8.8
+      }
+    ]
+  },
+  "VAP_mean": {
+    "n_videos": 21,
+    "mae": 2.511,
+    "mean_pct_diff": 14.01,
+    "pearson_r": 0.752,
+    "pearson_p": 8.4e-05,
+    "icc": {
+      "icc": 0.7178,
+      "lower_ci": 0.4069,
+      "upper_ci": 0.8702,
+      "f_stat": 5.8458,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.000114
+    },
+    "bland_altman": {
+      "mean_diff": -0.059,
+      "sd_diff": 3.856,
+      "upper_loa": 7.5,
+      "lower_loa": -7.617
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 29.3,
+        "actual": 18.8,
+        "diff": 10.5
+      },
+      {
+        "video": "10",
+        "predicted": 11.98,
+        "actual": 13.8,
+        "diff": -1.82
+      },
+      {
+        "video": "11",
+        "predicted": 20.56,
+        "actual": 21.2,
+        "diff": -0.64
+      },
+      {
+        "video": "12",
+        "predicted": 12.04,
+        "actual": 11.4,
+        "diff": 0.64
+      },
+      {
+        "video": "13",
+        "predicted": 11.46,
+        "actual": 14.2,
+        "diff": -2.74
+      },
+      {
+        "video": "14",
+        "predicted": 16.52,
+        "actual": 16.6,
+        "diff": -0.08
+      },
+      {
+        "video": "15",
+        "predicted": 11.2,
+        "actual": 15.8,
+        "diff": -4.6
+      },
+      {
+        "video": "16",
+        "predicted": 16.27,
+        "actual": 15.5,
+        "diff": 0.77
+      },
+      {
+        "video": "17",
+        "predicted": 16.54,
+        "actual": 18.8,
+        "diff": -2.26
+      },
+      {
+        "video": "19",
+        "predicted": 14.89,
+        "actual": 20.7,
+        "diff": -5.81
+      },
+      {
+        "video": "2",
+        "predicted": 24.35,
+        "actual": 26.9,
+        "diff": -2.55
+      },
+      {
+        "video": "20",
+        "predicted": 15.93,
+        "actual": 16.3,
+        "diff": -0.37
+      },
+      {
+        "video": "21",
+        "predicted": 16.69,
+        "actual": 18.0,
+        "diff": -1.31
+      },
+      {
+        "video": "22",
+        "predicted": 18.16,
+        "actual": 17.3,
+        "diff": 0.86
+      },
+      {
+        "video": "3",
+        "predicted": 25.43,
+        "actual": 23.1,
+        "diff": 2.33
+      },
+      {
+        "video": "4",
+        "predicted": 28.35,
+        "actual": 19.0,
+        "diff": 9.35
+      },
+      {
+        "video": "5",
+        "predicted": 21.73,
+        "actual": 20.5,
+        "diff": 1.23
+      },
+      {
+        "video": "6",
+        "predicted": 18.67,
+        "actual": 18.6,
+        "diff": 0.07
+      },
+      {
+        "video": "7",
+        "predicted": 18.12,
+        "actual": 19.0,
+        "diff": -0.88
+      },
+      {
+        "video": "8",
+        "predicted": 26.48,
+        "actual": 27.2,
+        "diff": -0.72
+      },
+      {
+        "video": "9",
+        "predicted": 9.3,
+        "actual": 12.5,
+        "diff": -3.2
+      }
+    ]
+  },
+  "VSL_mean": {
+    "n_videos": 21,
+    "mae": 2.637,
+    "mean_pct_diff": 17.56,
+    "pearson_r": 0.7196,
+    "pearson_p": 0.000236,
+    "icc": {
+      "icc": 0.6843,
+      "lower_ci": 0.3593,
+      "upper_ci": 0.856,
+      "f_stat": 5.2291,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.000256
+    },
+    "bland_altman": {
+      "mean_diff": 0.538,
+      "sd_diff": 3.539,
+      "upper_loa": 7.474,
+      "lower_loa": -6.398
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 26.55,
+        "actual": 16.6,
+        "diff": 9.95
+      },
+      {
+        "video": "10",
+        "predicted": 10.44,
+        "actual": 12.2,
+        "diff": -1.76
+      },
+      {
+        "video": "11",
+        "predicted": 16.73,
+        "actual": 16.4,
+        "diff": 0.33
+      },
+      {
+        "video": "12",
+        "predicted": 10.38,
+        "actual": 8.3,
+        "diff": 2.08
+      },
+      {
+        "video": "13",
+        "predicted": 10.71,
+        "actual": 12.8,
+        "diff": -2.09
+      },
+      {
+        "video": "14",
+        "predicted": 15.56,
+        "actual": 14.6,
+        "diff": 0.96
+      },
+      {
+        "video": "15",
+        "predicted": 9.67,
+        "actual": 13.5,
+        "diff": -3.83
+      },
+      {
+        "video": "16",
+        "predicted": 14.44,
+        "actual": 12.1,
+        "diff": 2.34
+      },
+      {
+        "video": "17",
+        "predicted": 13.8,
+        "actual": 15.5,
+        "diff": -1.7
+      },
+      {
+        "video": "19",
+        "predicted": 12.61,
+        "actual": 18.0,
+        "diff": -5.39
+      },
+      {
+        "video": "2",
+        "predicted": 20.88,
+        "actual": 23.4,
+        "diff": -2.52
+      },
+      {
+        "video": "20",
+        "predicted": 14.12,
+        "actual": 12.6,
+        "diff": 1.52
+      },
+      {
+        "video": "21",
+        "predicted": 14.48,
+        "actual": 15.3,
+        "diff": -0.82
+      },
+      {
+        "video": "22",
+        "predicted": 15.64,
+        "actual": 14.3,
+        "diff": 1.34
+      },
+      {
+        "video": "3",
+        "predicted": 22.34,
+        "actual": 18.0,
+        "diff": 4.34
+      },
+      {
+        "video": "4",
+        "predicted": 24.11,
+        "actual": 17.2,
+        "diff": 6.91
+      },
+      {
+        "video": "5",
+        "predicted": 20.55,
+        "actual": 19.1,
+        "diff": 1.45
+      },
+      {
+        "video": "6",
+        "predicted": 16.79,
+        "actual": 15.3,
+        "diff": 1.49
+      },
+      {
+        "video": "7",
+        "predicted": 15.23,
+        "actual": 14.6,
+        "diff": 0.63
+      },
+      {
+        "video": "8",
+        "predicted": 21.65,
+        "actual": 22.5,
+        "diff": -0.85
+      },
+      {
+        "video": "9",
+        "predicted": 7.72,
+        "actual": 10.8,
+        "diff": -3.08
+      }
+    ]
+  },
+  "VCL_mean": {
+    "n_videos": 21,
+    "mae": 4.032,
+    "mean_pct_diff": 15.09,
+    "pearson_r": 0.753,
+    "pearson_p": 8.2e-05,
+    "icc": {
+      "icc": 0.6976,
+      "lower_ci": 0.4679,
+      "upper_ci": 0.8874,
+      "f_stat": 6.7983,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 3.7e-05
+    },
+    "bland_altman": {
+      "mean_diff": -2.377,
+      "sd_diff": 4.309,
+      "upper_loa": 6.069,
+      "lower_loa": -10.823
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 28.94,
+        "actual": 23.3,
+        "diff": 5.64
+      },
+      {
+        "video": "10",
+        "predicted": 18.85,
+        "actual": 22.0,
+        "diff": -3.15
+      },
+      {
+        "video": "11",
+        "predicted": 30.0,
+        "actual": 34.8,
+        "diff": -4.8
+      },
+      {
+        "video": "12",
+        "predicted": 22.94,
+        "actual": 23.2,
+        "diff": -0.26
+      },
+      {
+        "video": "13",
+        "predicted": 14.31,
+        "actual": 20.6,
+        "diff": -6.29
+      },
+      {
+        "video": "14",
+        "predicted": 25.9,
+        "actual": 26.5,
+        "diff": -0.6
+      },
+      {
+        "video": "15",
+        "predicted": 17.75,
+        "actual": 25.8,
+        "diff": -8.05
+      },
+      {
+        "video": "16",
+        "predicted": 25.23,
+        "actual": 25.9,
+        "diff": -0.67
+      },
+      {
+        "video": "17",
+        "predicted": 20.99,
+        "actual": 25.6,
+        "diff": -4.61
+      },
+      {
+        "video": "19",
+        "predicted": 20.96,
+        "actual": 29.9,
+        "diff": -8.94
+      },
+      {
+        "video": "2",
+        "predicted": 29.39,
+        "actual": 35.6,
+        "diff": -6.21
+      },
+      {
+        "video": "20",
+        "predicted": 21.49,
+        "actual": 23.2,
+        "diff": -1.71
+      },
+      {
+        "video": "21",
+        "predicted": 22.29,
+        "actual": 24.7,
+        "diff": -2.41
+      },
+      {
+        "video": "22",
+        "predicted": 24.79,
+        "actual": 25.7,
+        "diff": -0.91
+      },
+      {
+        "video": "3",
+        "predicted": 34.16,
+        "actual": 38.8,
+        "diff": -4.64
+      },
+      {
+        "video": "4",
+        "predicted": 34.99,
+        "actual": 25.8,
+        "diff": 9.19
+      },
+      {
+        "video": "5",
+        "predicted": 24.53,
+        "actual": 26.1,
+        "diff": -1.57
+      },
+      {
+        "video": "6",
+        "predicted": 36.25,
+        "actual": 33.7,
+        "diff": 2.55
+      },
+      {
+        "video": "7",
+        "predicted": 23.99,
+        "actual": 27.7,
+        "diff": -3.71
+      },
+      {
+        "video": "8",
+        "predicted": 34.86,
+        "actual": 37.9,
+        "diff": -3.04
+      },
+      {
+        "video": "9",
+        "predicted": 14.58,
+        "actual": 20.3,
+        "diff": -5.72
+      }
+    ]
+  },
+  "LIN_mean": {
+    "n_videos": 21,
+    "mae": 7.572,
+    "mean_pct_diff": 15.55,
+    "pearson_r": 0.6576,
+    "pearson_p": 0.001197,
+    "icc": {
+      "icc": 0.5313,
+      "lower_ci": 0.3058,
+      "upper_ci": 0.839,
+      "f_stat": 4.6353,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.000594
+    },
+    "bland_altman": {
+      "mean_diff": 6.486,
+      "sd_diff": 8.037,
+      "upper_loa": 22.239,
+      "lower_loa": -9.266
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 87.03,
+        "actual": 57.0,
+        "diff": 30.03
+      },
+      {
+        "video": "10",
+        "predicted": 53.52,
+        "actual": 54.0,
+        "diff": -0.48
+      },
+      {
+        "video": "11",
+        "predicted": 54.72,
+        "actual": 46.0,
+        "diff": 8.72
+      },
+      {
+        "video": "12",
+        "predicted": 40.97,
+        "actual": 32.0,
+        "diff": 8.97
+      },
+      {
+        "video": "13",
+        "predicted": 64.08,
+        "actual": 53.0,
+        "diff": 11.08
+      },
+      {
+        "video": "14",
+        "predicted": 57.74,
+        "actual": 54.0,
+        "diff": 3.74
+      },
+      {
+        "video": "15",
+        "predicted": 48.01,
+        "actual": 45.0,
+        "diff": 3.01
+      },
+      {
+        "video": "16",
+        "predicted": 52.15,
+        "actual": 44.0,
+        "diff": 8.15
+      },
+      {
+        "video": "17",
+        "predicted": 59.99,
+        "actual": 58.0,
+        "diff": 1.99
+      },
+      {
+        "video": "19",
+        "predicted": 50.26,
+        "actual": 58.0,
+        "diff": -7.74
+      },
+      {
+        "video": "2",
+        "predicted": 69.29,
+        "actual": 64.0,
+        "diff": 5.29
+      },
+      {
+        "video": "20",
+        "predicted": 61.48,
+        "actual": 52.0,
+        "diff": 9.48
+      },
+      {
+        "video": "21",
+        "predicted": 56.8,
+        "actual": 58.0,
+        "diff": -1.2
+      },
+      {
+        "video": "22",
+        "predicted": 55.9,
+        "actual": 45.0,
+        "diff": 10.9
+      },
+      {
+        "video": "3",
+        "predicted": 59.43,
+        "actual": 39.0,
+        "diff": 20.43
+      },
+      {
+        "video": "4",
+        "predicted": 58.05,
+        "actual": 55.0,
+        "diff": 3.05
+      },
+      {
+        "video": "5",
+        "predicted": 78.23,
+        "actual": 70.0,
+        "diff": 8.23
+      },
+      {
+        "video": "6",
+        "predicted": 47.17,
+        "actual": 45.0,
+        "diff": 2.17
+      },
+      {
+        "video": "7",
+        "predicted": 57.58,
+        "actual": 48.0,
+        "diff": 9.58
+      },
+      {
+        "video": "8",
+        "predicted": 58.79,
+        "actual": 56.0,
+        "diff": 2.79
+      },
+      {
+        "video": "9",
+        "predicted": 48.02,
+        "actual": 50.0,
+        "diff": -1.98
+      }
+    ]
+  },
+  "STR_mean": {
+    "n_videos": 21,
+    "mae": 6.34,
+    "mean_pct_diff": 8.71,
+    "pearson_r": 0.2445,
+    "pearson_p": 0.28536,
+    "icc": {
+      "icc": 0.193,
+      "lower_ci": -0.2015,
+      "upper_ci": 0.6029,
+      "f_stat": 1.638,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.139105
+    },
+    "bland_altman": {
+      "mean_diff": 4.286,
+      "sd_diff": 6.942,
+      "upper_loa": 17.892,
+      "lower_loa": -9.321
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 88.82,
+        "actual": 76.0,
+        "diff": 12.82
+      },
+      {
+        "video": "10",
+        "predicted": 81.41,
+        "actual": 84.0,
+        "diff": -2.59
+      },
+      {
+        "video": "11",
+        "predicted": 77.94,
+        "actual": 74.0,
+        "diff": 3.94
+      },
+      {
+        "video": "12",
+        "predicted": 76.8,
+        "actual": 64.0,
+        "diff": 12.8
+      },
+      {
+        "video": "13",
+        "predicted": 78.0,
+        "actual": 77.0,
+        "diff": 1.0
+      },
+      {
+        "video": "14",
+        "predicted": 86.56,
+        "actual": 82.0,
+        "diff": 4.56
+      },
+      {
+        "video": "15",
+        "predicted": 74.9,
+        "actual": 73.0,
+        "diff": 1.9
+      },
+      {
+        "video": "16",
+        "predicted": 81.4,
+        "actual": 71.0,
+        "diff": 10.4
+      },
+      {
+        "video": "17",
+        "predicted": 75.73,
+        "actual": 78.0,
+        "diff": -2.27
+      },
+      {
+        "video": "19",
+        "predicted": 74.65,
+        "actual": 82.0,
+        "diff": -7.35
+      },
+      {
+        "video": "2",
+        "predicted": 82.09,
+        "actual": 83.0,
+        "diff": -0.91
+      },
+      {
+        "video": "20",
+        "predicted": 81.89,
+        "actual": 73.0,
+        "diff": 8.89
+      },
+      {
+        "video": "21",
+        "predicted": 76.85,
+        "actual": 79.0,
+        "diff": -2.15
+      },
+      {
+        "video": "22",
+        "predicted": 82.14,
+        "actual": 68.0,
+        "diff": 14.14
+      },
+      {
+        "video": "3",
+        "predicted": 85.25,
+        "actual": 68.0,
+        "diff": 17.25
+      },
+      {
+        "video": "4",
+        "predicted": 77.82,
+        "actual": 75.0,
+        "diff": 2.82
+      },
+      {
+        "video": "5",
+        "predicted": 89.68,
+        "actual": 88.0,
+        "diff": 1.68
+      },
+      {
+        "video": "6",
+        "predicted": 90.14,
+        "actual": 79.0,
+        "diff": 11.14
+      },
+      {
+        "video": "7",
+        "predicted": 75.94,
+        "actual": 69.0,
+        "diff": 6.94
+      },
+      {
+        "video": "8",
+        "predicted": 77.29,
+        "actual": 76.0,
+        "diff": 1.29
+      },
+      {
+        "video": "9",
+        "predicted": 72.7,
+        "actual": 79.0,
+        "diff": -6.3
+      }
+    ]
+  },
+  "WOB_mean": {
+    "n_videos": 21,
+    "mae": 4.99,
+    "mean_pct_diff": 7.92,
+    "pearson_r": 0.7654,
+    "pearson_p": 5.3e-05,
+    "icc": {
+      "icc": 0.68,
+      "lower_ci": 0.4484,
+      "upper_ci": 0.882,
+      "f_stat": 6.4713,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 5.3e-05
+    },
+    "bland_altman": {
+      "mean_diff": 3.701,
+      "sd_diff": 6.394,
+      "upper_loa": 16.234,
+      "lower_loa": -8.832
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 91.73,
+        "actual": 69.0,
+        "diff": 22.73
+      },
+      {
+        "video": "10",
+        "predicted": 62.37,
+        "actual": 62.0,
+        "diff": 0.37
+      },
+      {
+        "video": "11",
+        "predicted": 67.3,
+        "actual": 60.0,
+        "diff": 7.3
+      },
+      {
+        "video": "12",
+        "predicted": 49.69,
+        "actual": 46.0,
+        "diff": 3.69
+      },
+      {
+        "video": "13",
+        "predicted": 71.81,
+        "actual": 63.0,
+        "diff": 8.81
+      },
+      {
+        "video": "14",
+        "predicted": 62.56,
+        "actual": 63.0,
+        "diff": -0.44
+      },
+      {
+        "video": "15",
+        "predicted": 57.33,
+        "actual": 56.0,
+        "diff": 1.33
+      },
+      {
+        "video": "16",
+        "predicted": 58.7,
+        "actual": 58.0,
+        "diff": 0.7
+      },
+      {
+        "video": "17",
+        "predicted": 72.0,
+        "actual": 71.0,
+        "diff": 1.0
+      },
+      {
+        "video": "19",
+        "predicted": 61.43,
+        "actual": 68.0,
+        "diff": -6.57
+      },
+      {
+        "video": "2",
+        "predicted": 79.54,
+        "actual": 74.0,
+        "diff": 5.54
+      },
+      {
+        "video": "20",
+        "predicted": 69.89,
+        "actual": 68.0,
+        "diff": 1.89
+      },
+      {
+        "video": "21",
+        "predicted": 67.7,
+        "actual": 70.0,
+        "diff": -2.3
+      },
+      {
+        "video": "22",
+        "predicted": 65.68,
+        "actual": 60.0,
+        "diff": 5.68
+      },
+      {
+        "video": "3",
+        "predicted": 69.22,
+        "actual": 54.0,
+        "diff": 15.22
+      },
+      {
+        "video": "4",
+        "predicted": 69.31,
+        "actual": 65.0,
+        "diff": 4.31
+      },
+      {
+        "video": "5",
+        "predicted": 82.52,
+        "actual": 76.0,
+        "diff": 6.52
+      },
+      {
+        "video": "6",
+        "predicted": 50.34,
+        "actual": 54.0,
+        "diff": -3.66
+      },
+      {
+        "video": "7",
+        "predicted": 68.43,
+        "actual": 65.0,
+        "diff": 3.43
+      },
+      {
+        "video": "8",
+        "predicted": 71.73,
+        "actual": 69.0,
+        "diff": 2.73
+      },
+      {
+        "video": "9",
+        "predicted": 59.44,
+        "actual": 60.0,
+        "diff": -0.56
+      }
+    ]
+  },
+  "ALH_mean": {
+    "n_videos": 21,
+    "mae": 0.494,
+    "mean_pct_diff": 23.93,
+    "pearson_r": 0.7326,
+    "pearson_p": 0.000159,
+    "icc": {
+      "icc": 0.4215,
+      "lower_ci": 0.4053,
+      "upper_ci": 0.8697,
+      "f_stat": 5.8234,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.000117
+    },
+    "bland_altman": {
+      "mean_diff": -0.477,
+      "sd_diff": 0.311,
+      "upper_loa": 0.132,
+      "lower_loa": -1.086
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 1.26,
+        "actual": 1.3,
+        "diff": -0.04
+      },
+      {
+        "video": "10",
+        "predicted": 1.47,
+        "actual": 1.7,
+        "diff": -0.23
+      },
+      {
+        "video": "11",
+        "predicted": 1.97,
+        "actual": 2.9,
+        "diff": -0.93
+      },
+      {
+        "video": "12",
+        "predicted": 1.69,
+        "actual": 2.0,
+        "diff": -0.31
+      },
+      {
+        "video": "13",
+        "predicted": 0.86,
+        "actual": 1.4,
+        "diff": -0.54
+      },
+      {
+        "video": "14",
+        "predicted": 1.77,
+        "actual": 2.0,
+        "diff": -0.23
+      },
+      {
+        "video": "15",
+        "predicted": 1.48,
+        "actual": 1.9,
+        "diff": -0.42
+      },
+      {
+        "video": "16",
+        "predicted": 1.55,
+        "actual": 2.2,
+        "diff": -0.65
+      },
+      {
+        "video": "17",
+        "predicted": 1.3,
+        "actual": 1.6,
+        "diff": -0.3
+      },
+      {
+        "video": "19",
+        "predicted": 1.43,
+        "actual": 2.2,
+        "diff": -0.77
+      },
+      {
+        "video": "2",
+        "predicted": 1.69,
+        "actual": 2.2,
+        "diff": -0.51
+      },
+      {
+        "video": "20",
+        "predicted": 1.19,
+        "actual": 1.8,
+        "diff": -0.61
+      },
+      {
+        "video": "21",
+        "predicted": 1.32,
+        "actual": 1.8,
+        "diff": -0.48
+      },
+      {
+        "video": "22",
+        "predicted": 1.49,
+        "actual": 1.6,
+        "diff": -0.11
+      },
+      {
+        "video": "3",
+        "predicted": 1.88,
+        "actual": 2.8,
+        "diff": -0.92
+      },
+      {
+        "video": "4",
+        "predicted": 1.88,
+        "actual": 1.7,
+        "diff": 0.18
+      },
+      {
+        "video": "5",
+        "predicted": 1.11,
+        "actual": 1.6,
+        "diff": -0.49
+      },
+      {
+        "video": "6",
+        "predicted": 2.27,
+        "actual": 2.5,
+        "diff": -0.23
+      },
+      {
+        "video": "7",
+        "predicted": 1.41,
+        "actual": 2.4,
+        "diff": -0.99
+      },
+      {
+        "video": "8",
+        "predicted": 1.92,
+        "actual": 2.7,
+        "diff": -0.78
+      },
+      {
+        "video": "9",
+        "predicted": 1.04,
+        "actual": 1.7,
+        "diff": -0.66
+      }
+    ]
+  },
+  "BCF_mean": {
+    "n_videos": 21,
+    "mae": 0.848,
+    "mean_pct_diff": 15.3,
+    "pearson_r": 0.3882,
+    "pearson_p": 0.082019,
+    "icc": {
+      "icc": 0.1369,
+      "lower_ci": -0.0619,
+      "upper_ci": 0.6858,
+      "f_stat": 2.1772,
+      "df1": 20,
+      "df2": 20,
+      "p_value": 0.044808
+    },
+    "bland_altman": {
+      "mean_diff": -0.827,
+      "sd_diff": 0.498,
+      "upper_loa": 0.149,
+      "lower_loa": -1.802
+    },
+    "per_video": [
+      {
+        "video": "1",
+        "predicted": 3.46,
+        "actual": 5.1,
+        "diff": -1.64
+      },
+      {
+        "video": "10",
+        "predicted": 3.88,
+        "actual": 4.9,
+        "diff": -1.02
+      },
+      {
+        "video": "11",
+        "predicted": 4.81,
+        "actual": 5.5,
+        "diff": -0.69
+      },
+      {
+        "video": "12",
+        "predicted": 4.22,
+        "actual": 5.7,
+        "diff": -1.48
+      },
+      {
+        "video": "13",
+        "predicted": 4.66,
+        "actual": 5.5,
+        "diff": -0.84
+      },
+      {
+        "video": "14",
+        "predicted": 4.55,
+        "actual": 5.9,
+        "diff": -1.35
+      },
+      {
+        "video": "15",
+        "predicted": 4.34,
+        "actual": 5.1,
+        "diff": -0.76
+      },
+      {
+        "video": "16",
+        "predicted": 4.67,
+        "actual": 5.3,
+        "diff": -0.63
+      },
+      {
+        "video": "17",
+        "predicted": 4.32,
+        "actual": 5.7,
+        "diff": -1.38
+      },
+      {
+        "video": "19",
+        "predicted": 4.68,
+        "actual": 5.9,
+        "diff": -1.22
+      },
+      {
+        "video": "2",
+        "predicted": 4.41,
+        "actual": 5.6,
+        "diff": -1.19
+      },
+      {
+        "video": "20",
+        "predicted": 4.6,
+        "actual": 5.6,
+        "diff": -1.0
+      },
+      {
+        "video": "21",
+        "predicted": 4.49,
+        "actual": 5.2,
+        "diff": -0.71
+      },
+      {
+        "video": "22",
+        "predicted": 5.67,
+        "actual": 5.6,
+        "diff": 0.07
+      },
+      {
+        "video": "3",
+        "predicted": 5.38,
+        "actual": 6.0,
+        "diff": -0.62
+      },
+      {
+        "video": "4",
+        "predicted": 4.96,
+        "actual": 5.2,
+        "diff": -0.24
+      },
+      {
+        "video": "5",
+        "predicted": 4.66,
+        "actual": 5.8,
+        "diff": -1.14
+      },
+      {
+        "video": "6",
+        "predicted": 5.36,
+        "actual": 6.3,
+        "diff": -0.94
+      },
+      {
+        "video": "7",
+        "predicted": 5.05,
+        "actual": 4.9,
+        "diff": 0.15
+      },
+      {
+        "video": "8",
+        "predicted": 5.13,
+        "actual": 5.2,
+        "diff": -0.07
+      },
+      {
+        "video": "9",
+        "predicted": 4.84,
+        "actual": 5.5,
+        "diff": -0.66
+      }
+    ]
+  },
+  "_motility_error_distribution": {
+    "PR": {
+      "mean_error": -1.31,
+      "std_error": 6.56,
+      "max_overest": 10.2,
+      "max_underest": -16.1,
+      "n_overestimated": 3,
+      "n_underestimated": 6,
+      "n_within_5pp": 12
+    },
+    "NP": {
+      "mean_error": 0.2,
+      "std_error": 7.95,
+      "max_overest": 10.7,
+      "max_underest": -23.0,
+      "n_overestimated": 5,
+      "n_underestimated": 3,
+      "n_within_5pp": 13
+    },
+    "IM": {
+      "mean_error": 1.12,
+      "std_error": 9.83,
+      "max_overest": 27.2,
+      "max_underest": -15.3,
+      "n_overestimated": 5,
+      "n_underestimated": 6,
+      "n_within_5pp": 10
+    },
+    "total_motility": {
+      "mean_error": -1.12,
+      "std_error": 9.83,
+      "max_overest": 15.3,
+      "max_underest": -27.2,
+      "n_overestimated": 6,
+      "n_underestimated": 5,
+      "n_within_5pp": 10
+    }
+  }
+}

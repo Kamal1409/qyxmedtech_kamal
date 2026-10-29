@@ -33,8 +33,15 @@ htmlcov/
 # YOLO / Ultralytics run folders (training curves, checkpoints)
 runs/
 training/runs/
-outputs/
-training/outputs/
+/outputs/
+
+# Pipeline outputs are ignored, except the validation results (metrics JSON,
+# Bland-Altman plots, comparison/summary reports) -- see training/README.md
+training/outputs/*
+!training/outputs/seg/
+training/outputs/seg/*
+!training/outputs/seg/validation/
+training/outputs/seg/validation/baseline/
 
 # ---------------------------------------------------------------------------
 # Training data — large, generated, or raw patient material (DO NOT commit)

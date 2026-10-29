@@ -167,14 +167,100 @@ The hand-corrected test set is in `data/annotation_review/corrected/` (committed
 
 ```bash
 python -m src.run_pipeline --ocr                    # (re)transcribe data/report/*.jpg
+python -m src.validate                              # all scored videos → outputs/seg/validation/
 python -m src.validate --split test                 # held-out videos only
 python -m src.validate --split dev
 ```
 
 `data/ground_truth_verified.json` (hand-checked) is authoritative; OCR output never
 overwrites it. `data/video_split.json` fixes the dev/test split: thresholds are tuned on
-dev, and only test numbers are reported as accuracy. Metrics: MAE, percentage difference,
-Pearson r, ICC, Bland-Altman.
+dev, and only test numbers are reported as accuracy.
+
+## Evaluation metrics
+
+Each pipeline result is compared with the lab analyzer's report for the same sample:
+
+| Metric | What it tells you |
+|---|---|
+| **MAE** | Mean absolute error, in the parameter's own unit (pp for percentages) |
+| **Bias** | Mean of (ours − lab). Negative = we read lower than the lab |
+| **95% limits of agreement** | Bland-Altman: bias ± 1.96 SD. 95% of samples should differ from the lab by an amount in this range |
+| **Pearson r** | Whether we rank samples the same way as the lab (ignores bias) |
+| **ICC(2,1)** | Intraclass correlation for absolute agreement, the standard for method comparison (CLSI EP09). Penalises both scatter and bias. ≥ 0.90 excellent, 0.75–0.90 good, 0.50–0.75 moderate, < 0.50 poor |
+
+`validate.py` also reports the mean percentage difference, the WHO-class error spread
+(how many samples are within ±5 pp per class), and before/after comparisons with
+`--compare`.
+
+### Current results
+
+Held-out **test** videos (n = 7: 9, 11, 13, 14, 15, 21, 22), config as committed
+(30 Sep 2026 run). The dev MAE (n = 14) is shown for comparison; dev was used for tuning,
+so treat it as optimistic.
+
+| Parameter | Unit | MAE | Bias | 95% LoA | r | ICC | MAE (dev) |
+|---|---|---:|---:|---|---:|---:|---:|
+| Concentration | M/mL | 8.4 | −5.1 | −24.5 … 14.4 | 0.99 | 0.99 | 7.0 |
+| Total motility | % | 5.7 | +3.4 | −8.1 … 15.0 | 0.97 | 0.96 | 8.5 |
+| Progressive (PR) | % | 3.8 | +2.8 | −6.0 … 11.6 | 0.99 | 0.98 | 5.9 |
+| ↳ Rapid | % | 3.5 | −1.0 | −10.1 … 8.1 | 0.93 | 0.94 | 3.5 |
+| ↳ Slow | % | 3.8 | +3.8 | −3.5 … 11.0 | 0.98 | 0.95 | 5.2 |
+| Non-progressive (NP) | % | 5.9 | +0.7 | −15.1 … 16.5 | −0.31 | −0.37 | 5.9 |
+| Immotile (IM) | % | 5.7 | −3.4 | −15.0 … 8.1 | 0.97 | 0.96 | 8.5 |
+| VAP | µm/s | 1.9 | −1.7 | −5.4 … 2.1 | 0.93 | 0.78 | 2.8 |
+| VSL | µm/s | 1.8 | −1.0 | −5.0 … 2.9 | 0.90 | 0.72 | 3.1 |
+| VCL | µm/s | 4.1 | −4.1 | −9.7 … 1.5 | 0.88 | 0.68 | 4.0 |
+| LIN | % | 5.8 | +4.9 | −5.8 … 15.6 | 0.49 | 0.36 | 8.5 |
+| STR | % | 4.9 | +2.4 | −10.0 … 14.9 | 0.06 | 0.06 | 7.1 |
+| WOB | % | 3.8 | +2.8 | −5.7 … 11.4 | 0.58 | 0.51 | 5.6 |
+| ALH | µm | 0.48 | −0.48 | −1.0 … 0.1 | 0.83 | 0.51 | 0.50 |
+| BCF | Hz | 0.73 | −0.71 | −1.5 … 0.1 | 0.37 | 0.12 | 0.91 |
+
+What this means:
+
+- **Concentration and PR / rapid / slow / IM / total motility agree with the lab**
+  (ICC 0.94–0.99). These are the WHO headline values.
+- **NP does not track the lab per sample** (r < 0 on both test and dev). Its MAE looks
+  small only because NP is a small percentage in most samples.
+- **Velocities are good to moderate.** VCL reads about 4 µm/s low; all velocities scale
+  with the unverified `pixel_to_micron` and the fitted `capture_fps` (see Calibration).
+- **Path shape (LIN, STR, WOB) and ALH / BCF are poor.** ALH and BCF come from the head
+  path and are biased low. STR does not follow the lab at all.
+- With 7 test samples, a single outlier moves these numbers noticeably. For scale, the
+  analyzer's own repeatability is about 8–10% CV for motility and 6–8% for concentration
+  (FDA 510(k) K180343), which limits how closely any method can agree with it.
+
+### Detector
+
+Scored with `src.eval_weights` on the 40 hand-corrected frames from videos 9–23, which
+the detector never trained on (IoU ≥ 0.5, conf 0.35, 60 px size cap):
+
+| Videos | Precision | Recall | F1 | Head count error |
+|---|---:|---:|---:|---:|
+| All 15 | 0.959 | 0.921 | 0.940 | −3.9% |
+| 13 normal | 0.977 | 0.930 | 0.953 | −4.8% |
+| 18 + 23 (viscous / blurry, excluded from scoring) | 0.078 | 0.136 | 0.099 | +75% |
+
+Ignore the mAP in the YOLO training curves: its validation frames come from the same
+videos the detector was trained on, so it is far too optimistic.
+
+### Graphs
+
+The committed graphs are in `outputs/seg/validation/` (the one output folder not
+git-ignored). `python -m src.validate` writes the plots and JSON;
+`validate --compare <old report.json>` adds the two before/after reports. All cover the
+21 scored videos, dev and test together:
+
+| File | Contents |
+|---|---|
+| `bland_altman_<parameter>.html` | Bland-Altman plot per parameter: difference vs. mean, bias and limits of agreement |
+| `summary_report.html` | Plain-language before/after summary of the last change |
+| `comparison_report.html` | Full before/after table per parameter and per video |
+| `validation_report.json` | All metrics plus per-video predicted vs. lab values |
+
+They are interactive Plotly pages loaded from a CDN: download them and open in a browser
+(GitHub shows only the source). Running `validate --split test` or `--split dev`
+overwrites the plots with that subset, so re-run plain `validate` before committing.
 
 ## CASA parameters
 
@@ -242,7 +328,8 @@ training/
 │   ├── video_split.json        dev/test split
 │   ├── annotation_review*/     detector review sets (corrected/ = hand-corrected test set)
 │   └── vid/ frames/ yolo_*/    videos, frames, generated datasets  (git-ignored)
-├── outputs/                    all pipeline / training outputs     (git-ignored)
+├── outputs/                    pipeline / training outputs (git-ignored,
+│                               except seg/validation/: metrics + graphs)
 ├── src/
 │   ├── run_pipeline.py         CLI entry point (extract, run, OCR, validate, tail training)
 │   ├── seg_pipeline.py         stage orchestrator

@@ -1,0 +1,146 @@
+<title>Sperm Analysis Accuracy</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#f4f7f8;--card:#ffffff;--ink:#15232a;--muted:#5a6b73;--line:#d9e2e6;--accent:#0f7c86;
+--before:#b9c6cc;--good:#1e7a4c;--good-bg:#e3f3ea;--warn:#a55f00;--warn-bg:#fbefdc;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f171b;--card:#162128;--ink:#e3ebee;--muted:#93a5ad;--line:#26343b;--accent:#4fc1cb;--before:#4a5a62;--good:#6cd29a;--good-bg:#173427;--warn:#f0b35a;--warn-bg:#3a2a12;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f171b;--card:#162128;--ink:#e3ebee;--muted:#93a5ad;--line:#26343b;--accent:#4fc1cb;--before:#4a5a62;--good:#6cd29a;--good-bg:#173427;--warn:#f0b35a;--warn-bg:#3a2a12;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:32px 56px;display:flex;flex-direction:column;gap:28px}
+h1{font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.2;margin:0;text-wrap:balance}
+h2{font-size:1.2rem;margin:0 0 4px;text-wrap:balance}
+p{margin:0;max-width:65ch}.muted{color:var(--muted)}small{font-size:.78em;color:var(--muted)}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.answer{font-size:1.1rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.stat .k{font-size:.85rem;color:var(--muted)}
+.stat .v{font:500 1.5rem/1.2 "IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.stat .v .arrow{color:var(--muted);font-size:1rem;margin:0 4px}
+section{display:flex;flex-direction:column;gap:12px}
+.rows{background:var(--card);border:1px solid var(--line);border-radius:10px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:16px;padding:14px 16px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.name{font-weight:600}.meaning{font-size:.88rem;color:var(--muted)}
+.bars{display:flex;flex-direction:column;gap:6px}
+.bar-line{display:grid;grid-template-columns:3.6rem minmax(0,1fr) 7.5rem;align-items:center;gap:10px;font-size:.88rem}
+.lbl{color:var(--muted)}.track{height:10px;background:color-mix(in srgb,var(--line) 60%,transparent);border-radius:5px;overflow:hidden}
+.fill{display:block;height:100%;border-radius:5px}.fill.before{background:var(--before)}.fill.after{background:var(--good)}.fill.after-worse{background:var(--warn)}
+.val{font:500 .95rem "IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums;text-align:right}
+.sub{font-size:.84rem;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{font-weight:600;font-size:.8rem;padding:1px 8px;border-radius:999px}.pill.good{color:var(--good);background:var(--good-bg)}.pill.warn{color:var(--warn);background:var(--warn-bg)}
+.scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-weight:600;color:var(--muted);text-align:left}th.grp{text-align:center;color:var(--ink);border-left:1px solid var(--line)}
+td.num,th.num{text-align:right;font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+td.lab{border-left:1px solid var(--line);font-weight:500}
+.good-t{color:var(--good);font-weight:600}.warn-t{color:var(--warn);font-weight:600}
+.tag{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);border:1px solid currentColor;border-radius:4px;padding:0 4px;margin-left:4px}
+ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;max-width:70ch}
+@media (max-width:620px){.row{grid-template-columns:1fr;gap:8px}.bar-line{grid-template-columns:3.2rem minmax(0,1fr) 6.5rem}}
+</style>
+<main>
+<header style="display:flex;flex-direction:column;gap:10px">
+  <div class="eyebrow">Sperm analysis software · accuracy update · 30 Sep 2026</div>
+  <h1>Our results are now closer to the LensHooke lab analyzer</h1>
+  <p class="answer">We compared our software with the lab report on <b>21 semen samples</b>. After the update it is closer to
+  the lab on <b>6 of 7</b> measurements: sperm count moved from 38.8 to 7.5 million/mL off,
+  swimming speed from 12.3 to 2.5 µm/s off. It got slightly worse on moving in place.</p>
+</header>
+
+<div class="stats">
+  <div class="stat"><span class="k">Sperm count: average difference from the lab</span>
+    <span class="v">38.8<span class="arrow">→</span>7.5 <small>M/mL</small></span></div>
+  <div class="stat"><span class="k">Swimming speed: average difference from the lab</span>
+    <span class="v">12.3<span class="arrow">→</span>2.5 <small>µm/s</small></span></div>
+  <div class="stat"><span class="k">Total motility: average difference from the lab</span>
+    <span class="v">9.5<span class="arrow">→</span>7.6 <small>points</small></span></div>
+  <div class="stat"><span class="k">Samples within 5 points of the lab on motility</span><span class="v">10<span class="arrow">→</span>10 <small>of 21</small></span></div>
+</div>
+
+<section>
+  <div><h2>How far off we are, measurement by measurement</h2>
+  <p class="muted">Each number is how far our result was from the lab report on average. Shorter bars are better. "Points" means percentage points: if the lab says 60% and we say 55%, that is 5 points.</p></div>
+  <div class="rows">
+<div class="row">
+  <div class="what"><div class="name">Sperm count</div><div class="meaning">millions of sperm per mL of semen</div></div>
+  <div class="bars">
+    <div class="bar-line"><span class="lbl">Before</span><span class="track"><span class="fill before" style="width:100.0%"></span></span><span class="val">38.8 <small>M/mL</small></span></div>
+    <div class="bar-line"><span class="lbl">After</span><span class="track"><span class="fill after" style="width:19.3%"></span></span><span class="val">7.5 <small>M/mL</small></span></div>
+    <div class="sub"><span class="pill good">81% closer</span> <span class="muted">On the 7 samples kept aside for checking: 38.5 → 8.4 M/mL</span></div>
+  </div>
+</div>
+<div class="row">
+  <div class="what"><div class="name">Total motility</div><div class="meaning">share of sperm that move at all</div></div>
+  <div class="bars">
+    <div class="bar-line"><span class="lbl">Before</span><span class="track"><span class="fill before" style="width:100.0%"></span></span><span class="val">9.5 <small>points</small></span></div>
+    <div class="bar-line"><span class="lbl">After</span><span class="track"><span class="fill after" style="width:80.0%"></span></span><span class="val">7.6 <small>points</small></span></div>
+    <div class="sub"><span class="pill good">20% closer</span> <span class="muted"><span class="warn-t">On the 7 samples kept aside for checking: 4.7 → 5.7 points (worse)</span></span></div>
+  </div>
+</div>
+<div class="row">
+  <div class="what"><div class="name">Progressive motility</div><div class="meaning">share of sperm swimming forward</div></div>
+  <div class="bars">
+    <div class="bar-line"><span class="lbl">Before</span><span class="track"><span class="fill before" style="width:100.0%"></span></span><span class="val">5.5 <small>points</small></span></div>
+    <div class="bar-line"><span class="lbl">After</span><span class="track"><span class="fill after" style="width:95.2%"></span></span><span class="val">5.2 <small>points</small></span></div>
+    <div class="sub"><span class="pill good">5% closer</span> <span class="muted"><span class="warn-t">On the 7 samples kept aside for checking: 2.6 → 3.8 points (worse)</span></span></div>
+  </div>
+</div>
+<div class="row">
+  <div class="what"><div class="name">Fast swimmers</div><div class="meaning">share swimming forward quickly</div></div>
+  <div class="bars">
+    <div class="bar-line"><span class="lbl">Before</span><span class="track"><span class="fill before" style="width:100.0%"></span></span><span class="val">12.9 <small>points</small></span></div>
+    <div class="bar-line"><span class="lbl">After</span><span class="track"><span class="fill after" style="width:27.3%"></span></span><span class="val">3.5 <small>points</small></span></div>
+    <div class="sub"><span class="pill good">73% closer</span> <span class="muted">On the 7 samples kept aside for checking: 15.5 → 3.5 points</span></div>
+  </div>
+</div>
+<div class="row">
+  <div class="what"><div class="name">Slow swimmers</div><div class="meaning">share swimming forward slowly</div></div>
+  <div class="bars">
+    <div class="bar-line"><span class="lbl">Before</span><span class="track"><span class="fill before" style="width:100.0%"></span></span><span class="val">16.3 <small>points</small></span></div>
+    <div class="bar-line"><span class="lbl">After</span><span class="track"><span class="fill after" style="width:29.0%"></span></span><span class="val">4.7 <small>points</small></span></div>
+    <div class="sub"><span class="pill good">71% closer</span> <span class="muted">On the 7 samples kept aside for checking: 15.4 → 3.8 points</span></div>
+  </div>
+</div>
+<div class="row">
+  <div class="what"><div class="name">Swimming speed</div><div class="meaning">average speed along the path, micrometres per second</div></div>
+  <div class="bars">
+    <div class="bar-line"><span class="lbl">Before</span><span class="track"><span class="fill before" style="width:100.0%"></span></span><span class="val">12.3 <small>µm/s</small></span></div>
+    <div class="bar-line"><span class="lbl">After</span><span class="track"><span class="fill after" style="width:20.4%"></span></span><span class="val">2.5 <small>µm/s</small></span></div>
+    <div class="sub"><span class="pill good">80% closer</span> <span class="muted">On the 7 samples kept aside for checking: 9.5 → 1.9 µm/s</span></div>
+  </div>
+</div>
+<div class="row">
+  <div class="what"><div class="name">Moving in place</div><div class="meaning">share that move without getting anywhere</div></div>
+  <div class="bars">
+    <div class="bar-line"><span class="lbl">Before</span><span class="track"><span class="fill before" style="width:93.1%"></span></span><span class="val">5.5 <small>points</small></span></div>
+    <div class="bar-line"><span class="lbl">After</span><span class="track"><span class="fill after-worse" style="width:100.0%"></span></span><span class="val">5.9 <small>points</small></span></div>
+    <div class="sub"><span class="pill warn">7% further</span> <span class="muted"><span class="warn-t">On the 7 samples kept aside for checking: 5.1 → 5.9 points (worse)</span></span></div>
+  </div>
+</div></div>
+</section>
+
+<section>
+  <div><h2>Sample by sample</h2>
+  <p class="muted">The lab's number next to ours before and after the update. Green = closer to the lab than before, amber = further.
+  Samples marked <span class="tag">check</span> were kept aside and not used while adjusting the software, so they show how it does on new samples.</p></div>
+  <div class="scroll"><table><thead><tr><th rowspan="2">Sample</th><th colspan="3" class="grp">Sperm count <small>(M/mL)</small></th><th colspan="3" class="grp">Total motility <small>(%)</small></th><th colspan="3" class="grp">Swimming speed <small>(µm/s)</small></th></tr><tr><th class="num">Lab</th><th class="num">Before</th><th class="num">After</th><th class="num">Lab</th><th class="num">Before</th><th class="num">After</th><th class="num">Lab</th><th class="num">Before</th><th class="num">After</th></tr></thead>
+  <tbody><tr><td class="sample">1</td><td class="num lab">38.6</td><td class="num">30.1</td><td class="num good-t">40.5</td><td class="num lab">80</td><td class="num">44</td><td class="num good-t">53</td><td class="num lab">18.8</td><td class="num">45.9</td><td class="num good-t">29.3</td></tr><tr><td class="sample">2</td><td class="num lab">109.8</td><td class="num">69.4</td><td class="num good-t">109.9</td><td class="num lab">90</td><td class="num">86</td><td class="num warn-t">86</td><td class="num lab">26.9</td><td class="num">37.9</td><td class="num good-t">24.4</td></tr><tr><td class="sample">3</td><td class="num lab">22.8</td><td class="num">15.5</td><td class="num good-t">22.1</td><td class="num lab">49</td><td class="num">29</td><td class="num good-t">32</td><td class="num lab">23.1</td><td class="num">40.1</td><td class="num good-t">25.4</td></tr><tr><td class="sample">4</td><td class="num lab">36.0</td><td class="num">26.7</td><td class="num good-t">38.6</td><td class="num lab">31</td><td class="num">22</td><td class="num good-t">31</td><td class="num lab">19.0</td><td class="num">42.8</td><td class="num good-t">28.4</td></tr><tr><td class="sample">5</td><td class="num lab">66.5</td><td class="num">44.7</td><td class="num good-t">66.0</td><td class="num lab">63</td><td class="num">50</td><td class="num good-t">59</td><td class="num lab">20.5</td><td class="num">36.5</td><td class="num good-t">21.7</td></tr><tr><td class="sample">6</td><td class="num lab">9.3</td><td class="num">14.8</td><td class="num warn-t">18.5</td><td class="num lab">69</td><td class="num">35</td><td class="num good-t">61</td><td class="num lab">18.6</td><td class="num">36.6</td><td class="num good-t">18.7</td></tr><tr><td class="sample">7</td><td class="num lab">274.6</td><td class="num">180.7</td><td class="num good-t">285.1</td><td class="num lab">95</td><td class="num">88</td><td class="num warn-t">87</td><td class="num lab">19.0</td><td class="num">28.6</td><td class="num good-t">18.1</td></tr><tr><td class="sample">8</td><td class="num lab">153.0</td><td class="num">93.9</td><td class="num good-t">144.7</td><td class="num lab">93</td><td class="num">80</td><td class="num warn-t">80</td><td class="num lab">27.2</td><td class="num">38.6</td><td class="num good-t">26.5</td></tr><tr><td class="sample">9 <span class="tag">check</span></td><td class="num lab">164.6</td><td class="num">97.9</td><td class="num good-t">142.3</td><td class="num lab">33</td><td class="num">34</td><td class="num warn-t">42</td><td class="num lab">12.5</td><td class="num">17.2</td><td class="num good-t">9.3</td></tr><tr><td class="sample">10</td><td class="num lab">79.1</td><td class="num">53.6</td><td class="num good-t">80.6</td><td class="num lab">57</td><td class="num">51</td><td class="num good-t">60</td><td class="num lab">13.8</td><td class="num">20.8</td><td class="num good-t">12.0</td></tr><tr><td class="sample">11 <span class="tag">check</span></td><td class="num lab">211.3</td><td class="num">137.0</td><td class="num good-t">216.3</td><td class="num lab">96</td><td class="num">96</td><td class="num warn-t">97</td><td class="num lab">21.2</td><td class="num">33.2</td><td class="num good-t">20.6</td></tr><tr><td class="sample">12</td><td class="num lab">91.1</td><td class="num">59.8</td><td class="num good-t">86.1</td><td class="num lab">29</td><td class="num">18</td><td class="num good-t">27</td><td class="num lab">11.4</td><td class="num">22.9</td><td class="num good-t">12.0</td></tr><tr><td class="sample">13 <span class="tag">check</span></td><td class="num lab">47.5</td><td class="num">28.9</td><td class="num good-t">41.8</td><td class="num lab">27</td><td class="num">18</td><td class="num good-t">24</td><td class="num lab">14.2</td><td class="num">21.9</td><td class="num good-t">11.5</td></tr><tr><td class="sample">14 <span class="tag">check</span></td><td class="num lab">63.5</td><td class="num">37.9</td><td class="num good-t">55.5</td><td class="num lab">50</td><td class="num">49</td><td class="num warn-t">55</td><td class="num lab">16.6</td><td class="num">26.7</td><td class="num good-t">16.5</td></tr><tr><td class="sample">15 <span class="tag">check</span></td><td class="num lab">55.8</td><td class="num">39.6</td><td class="num good-t">58.2</td><td class="num lab">30</td><td class="num">26</td><td class="num warn-t">39</td><td class="num lab">15.8</td><td class="num">23.5</td><td class="num good-t">11.2</td></tr><tr><td class="sample">16</td><td class="num lab">69.3</td><td class="num">54.3</td><td class="num warn-t">86.0</td><td class="num lab">60</td><td class="num">58</td><td class="num warn-t">66</td><td class="num lab">15.5</td><td class="num">27.9</td><td class="num good-t">16.3</td></tr><tr><td class="sample">17</td><td class="num lab">128.6</td><td class="num">74.9</td><td class="num good-t">114.9</td><td class="num lab">35</td><td class="num">40</td><td class="num warn-t">46</td><td class="num lab">18.8</td><td class="num">28.9</td><td class="num good-t">16.5</td></tr><tr><td class="sample">19</td><td class="num lab">165.5</td><td class="num">90.2</td><td class="num good-t">138.2</td><td class="num lab">32</td><td class="num">37</td><td class="num warn-t">47</td><td class="num lab">20.7</td><td class="num">27.9</td><td class="num good-t">14.9</td></tr><tr><td class="sample">20</td><td class="num lab">266.0</td><td class="num">167.9</td><td class="num good-t">265.9</td><td class="num lab">94</td><td class="num">92</td><td class="num good-t">95</td><td class="num lab">16.3</td><td class="num">26.5</td><td class="num good-t">15.9</td></tr><tr><td class="sample">21 <span class="tag">check</span></td><td class="num lab">172.5</td><td class="num">105.7</td><td class="num good-t">161.2</td><td class="num lab">64</td><td class="num">59</td><td class="num warn-t">72</td><td class="num lab">18.0</td><td class="num">31.0</td><td class="num good-t">16.7</td></tr><tr><td class="sample">22 <span class="tag">check</span></td><td class="num lab">18.0</td><td class="num">16.9</td><td class="num warn-t">22.4</td><td class="num lab">57</td><td class="num">44</td><td class="num good-t">52</td><td class="num lab">17.3</td><td class="num">28.6</td><td class="num good-t">18.2</td></tr></tbody></table></div>
+</section>
+
+<section><h2>What we changed</h2><ul><li>Speed: the lab analyzer records video slower than it plays it back, so our software was reading every sperm as about 1.6 times too fast. We now use the real recording speed.</li><li>Following each sperm: in crowded samples the software sometimes mixed up a still sperm with a neighbour swimming past, which made still sperm look like they were moving. It now only links a sperm to positions it could physically reach between frames.</li><li>Round cells: some round cells and debris were being counted as sperm that do not move. The software now recognises them by their round shape and leaves them out.</li><li>Sperm moving in place: sperm that wiggle without getting anywhere were counted as not moving. They are now counted as moving.</li><li>Sperm count: our count now includes a correction for the analyzer&#x27;s counting chamber, measured against the lab reports.</li><li>We adjusted these settings on 14 samples and then checked them on 7 other samples that were kept aside.</li></ul></section>
+
+<section>
+  <h2>What this does not show yet</h2>
+  <ul>
+    <li>This is 21 samples. Before clinical use we need a larger set and a second lab's reports.</li>
+    <li>The lab analyzer itself varies by about 8–10% between repeat runs of the same sample, so small differences are within its own noise.</li>
+    <li>"Moving in place" is still unreliable and is not ready to report on its own.</li>
+    <li>Two settings were estimated from our samples because the analyzer's maker does not publish them (its camera speed and counting chamber). Replacing them with the maker's official values is the next step.</li>
+  </ul>
+</section>
+</main>

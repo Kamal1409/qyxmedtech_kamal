@@ -86,10 +86,11 @@ its accuracy:
 | `training/data/ground_truth*.json` | Values transcribed from those reports; `ground_truth_verified.json` is authoritative |
 | `training/data/video_split.json` | Video-level dev/test split used for tuning vs. held-out evaluation |
 | `training/data/annotation_review/corrected/` | Hand-corrected detector test frames |
+| `training/outputs/seg/validation/` | Accuracy vs. the lab: metrics JSON and Bland-Altman / comparison graphs (results table in [training/README.md](training/README.md#evaluation-metrics)) |
 
 Not included (git-ignored, kept locally): the raw analyzer videos (`training/data/vid/`),
 extracted frames, generated YOLO datasets (`yolo_dataset`, `yolo_cv`, `yolo_full`,
-`yolo_holdout`), training runs and checkpoints (`runs/`, `training/outputs/`), base
+`yolo_holdout`), training runs and checkpoints (`runs/`, the rest of `training/outputs/`), base
 COCO/YOLO weights (Ultralytics downloads these on demand), and every uploaded analysis
 (`backend/data/`). Retraining or re-running validation therefore needs the videos copied
 into `training/data/vid/` first.
